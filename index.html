@@ -19,84 +19,83 @@
 
     <!-- ======================================================
          HERO - FULL SCREEN AUTO-ROTATING SLIDES
-         Each slide tells a different story about the business
          ====================================================== -->
     <section class="hero-fullscreen" id="home">
 
         <!-- Slide 1: Infrastructure -->
         <div class="hero-slide active"
             style="background-image: url('construction/Const%20of%20new%20Booking%20office%20at%20Mahim%20Platform%20No%2001%20W.%20Rly.jpg');">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="slide-tag">🏛️ Government Infrastructure</span>
-                <h2 class="slide-heading">Building Mumbai's<br>Backbone Since 1970</h2>
-                <p class="slide-desc">Trusted by Western Railway, MCGM, and State Government — we build infrastructure
-                    that stands for decades.</p>
-            </div>
         </div>
-
         <!-- Slide 2: Commercial -->
         <div class="hero-slide"
             style="background-image: url('construction/Const.%20of%20commercial%20centre%20known%20as%20Chheda%20Arcade%20at%20Khira%20Nagar%20S%27cruz%20(W).jpg');">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="slide-tag">🏢 Commercial Construction</span>
-                <h2 class="slide-heading">Premium Commercial<br>Spaces, Delivered</h2>
-                <p class="slide-desc">From retail arcades to corporate offices — we design and build commercial spaces
-                    that drive business growth.</p>
-            </div>
         </div>
-
         <!-- Slide 3: Residential -->
         <div class="hero-slide"
             style="background-image: url('construction/Balance%20Work%20of%20const%20of%2054%20units%20type%20II%20qtrs%20Mumbai%20Central.jpg');">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="slide-tag">🏠 Residential Projects</span>
-                <h2 class="slide-heading">Homes & Quarters<br>Built with Care</h2>
-                <p class="slide-desc">Constructed 200+ residential units across Mumbai — delivering quality homes on
-                    time and within budget.</p>
-            </div>
         </div>
-
-        <!-- Slide 4: SRA / Buildings -->
+        <!-- Slide 4: SRA -->
         <div class="hero-slide"
             style="background-image: url('construction/Const.%20of%20Gr%20+%207%20floor%20bldg.%20known%20as%20Khatija%20Appt.%20under%20S.R.A%20Scheme,%20Bandra%20West.jpg');">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <span class="slide-tag">🏗️ SRA & Multi-Storey</span>
-                <h2 class="slide-heading">High-Rise Expertise<br>You Can Trust</h2>
-                <p class="slide-desc">Certified SRA contractor building multi-storey complexes with safety, speed and
-                    superior craftsmanship.</p>
-            </div>
         </div>
 
-        <!-- Brand overlay header (always visible) -->
-        <div class="hero-brand">
-            <div class="brand-inner">
-                <div class="brand-name">INDIAN CONSTRUCTION CO</div>
-                <div class="brand-since">Mumbai's Trusted Contractor — Since 1970</div>
-            </div>
+        <!-- Full dark overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- ZONE 1: TOP - Company name + since + service pills -->
+        <div class="hero-top">
+            <div class="brand-name">INDIAN CONSTRUCTION CO</div>
+            <div class="brand-since">Mumbai's Trusted Contractor — Since 1970</div>
             <div class="hero-services">
                 <span>Construction</span>
                 <span>Turnkey Interior</span>
                 <span>Architecture</span>
-                <span>Repair & Maint.</span>
+                <span>Repair &amp; Maint.</span>
                 <span>Estimation</span>
                 <span>Designing</span>
             </div>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View Our Projects</a>
-                <a href="tel:09967477866" class="btn btn-outline">📞 Call Now</a>
+        </div>
+
+        <!-- ZONE 2: CENTER - CTA Buttons -->
+        <div class="hero-center">
+            <a href="#projects" class="btn btn-primary">View Our Projects</a>
+            <a href="tel:09967477866" class="btn btn-outline">📞 Call Now</a>
+        </div>
+
+        <!-- ZONE 3: BOTTOM LEFT - Per-slide captions (JS driven) -->
+        <div class="slide-captions">
+            <div class="slide-caption active">
+                <span class="slide-tag">🏛️ Government Infrastructure</span>
+                <h2 class="slide-heading">Building Mumbai's Backbone<br>Since 1970</h2>
+                <p class="slide-desc">Trusted by Western Railway &amp; MCGM — we build infrastructure that stands for
+                    decades.</p>
+            </div>
+            <div class="slide-caption">
+                <span class="slide-tag">🏢 Commercial Construction</span>
+                <h2 class="slide-heading">Premium Commercial<br>Spaces, Delivered</h2>
+                <p class="slide-desc">From retail arcades to corporate offices — we design and build commercial spaces
+                    that drive growth.</p>
+            </div>
+            <div class="slide-caption">
+                <span class="slide-tag">🏠 Residential Projects</span>
+                <h2 class="slide-heading">200+ Homes &amp; Quarters<br>Built with Care</h2>
+                <p class="slide-desc">Delivering quality residential units across Mumbai — on time and within budget.
+                </p>
+            </div>
+            <div class="slide-caption">
+                <span class="slide-tag">🏗️ SRA &amp; Multi-Storey</span>
+                <h2 class="slide-heading">High-Rise Expertise<br>You Can Trust</h2>
+                <p class="slide-desc">Certified SRA contractor building multi-storey complexes with safety and superior
+                    craftsmanship.</p>
             </div>
         </div>
 
         <!-- Slide indicators -->
         <div class="slide-dots">
-            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
-            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
-            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
-            <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+            <button class="dot active" data-slide="0"></button>
+            <button class="dot" data-slide="1"></button>
+            <button class="dot" data-slide="2"></button>
+            <button class="dot" data-slide="3"></button>
         </div>
 
         <!-- Scroll prompt -->
@@ -316,20 +315,22 @@
     <script>
         (function () {
             const slides = document.querySelectorAll('.hero-slide');
+            const captions = document.querySelectorAll('.slide-caption');
             const dots = document.querySelectorAll('.dot');
             let current = 0;
             let timer;
 
             function goTo(index) {
                 slides[current].classList.remove('active');
+                captions[current].classList.remove('active');
                 dots[current].classList.remove('active');
                 current = (index + slides.length) % slides.length;
                 slides[current].classList.add('active');
+                captions[current].classList.add('active');
                 dots[current].classList.add('active');
             }
 
             function next() { goTo(current + 1); }
-
             function start() { timer = setInterval(next, 5000); }
             function pause() { clearInterval(timer); }
 

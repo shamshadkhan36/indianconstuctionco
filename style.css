@@ -66,7 +66,7 @@ body {
     overflow: hidden;
 }
 
-/* Individual slides */
+/* Background slides */
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -75,7 +75,7 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.2s ease;
-    filter: saturate(115%) brightness(0.75);
+    transform: scale(1.0);
 }
 
 .hero-slide.active {
@@ -84,40 +84,110 @@ body {
 }
 
 @keyframes kenBurns {
-    0% {
+    from {
         transform: scale(1.0);
     }
 
-    100% {
+    to {
         transform: scale(1.08);
     }
 }
 
-/* Gradient overlay — white fade at bottom, dark at top */
-.slide-overlay {
+/* Full gradient overlay */
+.hero-overlay {
     position: absolute;
     inset: 0;
+    z-index: 2;
     background: linear-gradient(180deg,
-            rgba(0, 0, 0, 0.55) 0%,
-            rgba(0, 0, 0, 0.25) 45%,
-            rgba(255, 255, 255, 0.0) 65%,
-            rgba(247, 248, 250, 0.95) 100%);
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.38) 40%,
+            rgba(0, 0, 0, 0.55) 70%,
+            rgba(0, 0, 0, 0.82) 100%);
 }
 
-/* Per-slide caption */
-.slide-content {
+/* ---- ZONE 1: TOP (Brand + Services) ---- */
+.hero-top {
     position: absolute;
-    bottom: 210px;
-    left: 5%;
-    max-width: 650px;
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.6s ease 0.6s, transform 0.6s ease 0.6s;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    padding: 2.5rem 5% 0;
 }
 
-.hero-slide.active .slide-content {
-    opacity: 1;
-    transform: translateY(0);
+.brand-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+
+.brand-since {
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+    font-weight: 600;
+    color: var(--clr-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.hero-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    padding-bottom: 0.5rem;
+}
+
+.hero-services span {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.28rem 0.9rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---- ZONE 2: CENTER (CTA Buttons) ---- */
+.hero-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ---- ZONE 3: BOTTOM LEFT (Slide Captions) ---- */
+.slide-captions {
+    position: absolute;
+    bottom: 90px;
+    left: 5%;
+    max-width: 540px;
+    z-index: 10;
+}
+
+.slide-caption {
+    display: none;
+    animation: fadeInUp 0.7s ease both;
+}
+
+.slide-caption.active {
+    display: block;
 }
 
 .slide-tag {
@@ -125,91 +195,31 @@ body {
     background: var(--grad-orange);
     color: #fff;
     font-family: var(--font-heading);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 0.4rem 1.1rem;
+    padding: 0.35rem 1rem;
     border-radius: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
     box-shadow: var(--glow-orange);
 }
 
 .slide-heading {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
     font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #fff;
-    margin-bottom: 0.8rem;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.6rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .slide-desc {
-    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
-    color: rgba(255, 255, 255, 0.88);
-    line-height: 1.7;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* Brand header pinned to center-top */
-.hero-brand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -55%);
-    text-align: center;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.brand-inner {
-    margin-bottom: 1.2rem;
-}
-
-.brand-name {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 0 3px 25px rgba(0, 0, 0, 0.5);
-    line-height: 1.05;
-}
-
-.brand-since {
-    font-size: clamp(0.85rem, 1.3vw, 1.05rem);
-    font-weight: 600;
-    color: var(--clr-gold);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-top: 0.5rem;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Service pills */
-.hero-services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.8rem;
-    pointer-events: none;
-}
-
-.hero-services span {
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.35rem 1rem;
-    border-radius: 50px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.65;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
 /* CTA Buttons */
@@ -262,10 +272,10 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* Slide indicators */
+/* Slide dots */
 .slide-dots {
     position: absolute;
-    bottom: 170px;
+    bottom: 55px;
     left: 5%;
     display: flex;
     gap: 10px;
@@ -276,7 +286,7 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.4);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -292,21 +302,21 @@ body {
 /* Scroll prompt */
 .scroll-prompt {
     position: absolute;
-    bottom: 28px;
+    bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     z-index: 10;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .scroll-arrow {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     animation: bounce 1.8s ease infinite;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 @keyframes bounce {
@@ -317,7 +327,7 @@ body {
     }
 
     50% {
-        transform: translateY(8px);
+        transform: translateY(7px);
     }
 }
 
@@ -769,72 +779,96 @@ body {
    RESPONSIVE
    ===================================================== */
 @media (max-width: 900px) {
-    .hero-brand {
-        width: 90%;
-    }
-
     .brand-name {
         letter-spacing: 1px;
     }
 
-    .slide-content {
-        bottom: 195px;
+    .slide-captions {
+        bottom: 85px;
     }
 
     .slide-dots {
-        bottom: 160px;
+        bottom: 50px;
     }
 }
 
 @media (max-width: 600px) {
+
+    /* Hero: compact top zone */
+    .hero-top {
+        padding: 1.2rem 4% 0;
+    }
+
     .brand-name {
-        font-size: 1.8rem;
+        font-size: 1.55rem;
         letter-spacing: 0;
+        margin-bottom: 0.2rem;
     }
 
     .brand-since {
-        font-size: 0.7rem;
-        letter-spacing: 1.5px;
+        font-size: 0.62rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.6rem;
     }
 
     .hero-services {
-        gap: 0.4rem;
+        gap: 0.3rem;
+        margin-bottom: 0;
     }
 
     .hero-services span {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.8rem;
+        font-size: 0.62rem;
+        padding: 0.22rem 0.65rem;
     }
 
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
+    /* Center zone: compact buttons */
+    .hero-center {
+        top: auto;
+        bottom: 220px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 0.6rem;
     }
 
     .btn {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
+        padding: 0.65rem 1.2rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
     }
 
-    .slide-content {
-        bottom: 215px;
+    /* Bottom-left captions: push right to avoid floating buttons */
+    .slide-captions {
+        bottom: 75px;
         left: 4%;
-        right: 4%;
+        right: 75px;
+        /* avoids floating social buttons */
+        max-width: none;
     }
 
     .slide-heading {
-        font-size: 1.6rem;
+        font-size: 1.35rem;
+    }
+
+    .slide-desc {
+        font-size: 0.82rem;
+    }
+
+    .slide-tag {
+        font-size: 0.65rem;
+        padding: 0.28rem 0.8rem;
     }
 
     .slide-dots {
-        bottom: 185px;
+        bottom: 42px;
         left: 4%;
     }
 
+    /* Stats strip */
     .stats-strip {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
         padding: 2rem 5%;
     }
 
@@ -844,7 +878,7 @@ body {
 
     .categories-section,
     .projects-section {
-        padding: 4rem 5%;
+        padding: 3.5rem 4%;
     }
 
     .project-grid {
@@ -855,14 +889,15 @@ body {
         flex-direction: column;
     }
 
+    /* Floating buttons: smaller, left side to avoid covering text */
     .floating-social {
-        right: 14px;
-        bottom: 25px;
+        right: 12px;
+        bottom: 20px;
         gap: 10px;
     }
 
     .float-btn {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
     }
 }
