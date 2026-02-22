@@ -4,50 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Construction Co | Premium Construction Services</title>
-    <!-- Google Fonts for Modern Industrial Typography -->
+    <title>Indian Construction Co | Premium Construction Services Since 1970</title>
+    <meta name="description"
+        content="Indian Construction Co - Mumbai's trusted contractor since 1970. Construction, Interior, Architecture, Repair & Maintenance. Call +91 99674 77866.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Background Overlay -->
-    <div class="bg-overlay"></div>
 
-    <!-- Main Content Container -->
-    <main class="main-content">
-        <!-- Center Content -->
-        <div class="hero-section">
-            <h1 class="main-heading animate-fade-in-up">INDIAN CONSTRUCTION CO</h1>
-            <p class="service-line animate-fade-in-up delay-1">
-                Construction <span class="divider">|</span> Turnkey Interior <span class="divider">|</span> Architecture
-                <span class="divider">|</span> Repair & Maintenance <span class="divider">|</span> Estimation <span
-                    class="divider">|</span> Designing
-            </p>
+    <!-- ======================================================
+         HERO - FULL SCREEN AUTO-ROTATING SLIDES
+         Each slide tells a different story about the business
+         ====================================================== -->
+    <section class="hero-fullscreen" id="home">
 
-            <div class="cta-container animate-fade-in-up delay-2">
-                <a href="#projects" class="btn btn-primary">View Our Projects</a>
-                <a href="tel:08652223456" class="btn btn-outline">Call Now</a>
-            </div>
-            <div class="contact-info animate-fade-in-up delay-3">
-                <p>Call us today: <strong>086522 23456</strong></p>
+        <!-- Slide 1: Infrastructure -->
+        <div class="hero-slide active"
+            style="background-image: url('construction/Const%20of%20new%20Booking%20office%20at%20Mahim%20Platform%20No%2001%20W.%20Rly.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="slide-tag">🏛️ Government Infrastructure</span>
+                <h2 class="slide-heading">Building Mumbai's<br>Backbone Since 1970</h2>
+                <p class="slide-desc">Trusted by Western Railway, MCGM, and State Government — we build infrastructure
+                    that stands for decades.</p>
             </div>
         </div>
-    </main>
 
-    <!-- Bottom Info Strip -->
-    <footer class="bottom-strip animate-slide-up delay-4">
+        <!-- Slide 2: Commercial -->
+        <div class="hero-slide"
+            style="background-image: url('construction/Const.%20of%20commercial%20centre%20known%20as%20Chheda%20Arcade%20at%20Khira%20Nagar%20S%27cruz%20(W).jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="slide-tag">🏢 Commercial Construction</span>
+                <h2 class="slide-heading">Premium Commercial<br>Spaces, Delivered</h2>
+                <p class="slide-desc">From retail arcades to corporate offices — we design and build commercial spaces
+                    that drive business growth.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Residential -->
+        <div class="hero-slide"
+            style="background-image: url('construction/Balance%20Work%20of%20const%20of%2054%20units%20type%20II%20qtrs%20Mumbai%20Central.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="slide-tag">🏠 Residential Projects</span>
+                <h2 class="slide-heading">Homes & Quarters<br>Built with Care</h2>
+                <p class="slide-desc">Constructed 200+ residential units across Mumbai — delivering quality homes on
+                    time and within budget.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: SRA / Buildings -->
+        <div class="hero-slide"
+            style="background-image: url('construction/Const.%20of%20Gr%20+%207%20floor%20bldg.%20known%20as%20Khatija%20Appt.%20under%20S.R.A%20Scheme,%20Bandra%20West.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <span class="slide-tag">🏗️ SRA & Multi-Storey</span>
+                <h2 class="slide-heading">High-Rise Expertise<br>You Can Trust</h2>
+                <p class="slide-desc">Certified SRA contractor building multi-storey complexes with safety, speed and
+                    superior craftsmanship.</p>
+            </div>
+        </div>
+
+        <!-- Brand overlay header (always visible) -->
+        <div class="hero-brand">
+            <div class="brand-inner">
+                <div class="brand-name">INDIAN CONSTRUCTION CO</div>
+                <div class="brand-since">Mumbai's Trusted Contractor — Since 1970</div>
+            </div>
+            <div class="hero-services">
+                <span>Construction</span>
+                <span>Turnkey Interior</span>
+                <span>Architecture</span>
+                <span>Repair & Maint.</span>
+                <span>Estimation</span>
+                <span>Designing</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Our Projects</a>
+                <a href="tel:09967477866" class="btn btn-outline">📞 Call Now</a>
+            </div>
+        </div>
+
+        <!-- Slide indicators -->
+        <div class="slide-dots">
+            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+            <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Scroll prompt -->
+        <div class="scroll-prompt">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         STATS STRIP
+         ===================================================== -->
+    <div class="stats-strip">
         <div class="stat-item">
-            <span class="stat-number">15+</span>
+            <span class="stat-number">55+</span>
             <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
             <span class="stat-number">200+</span>
-            <span class="stat-label">Projects</span>
+            <span class="stat-label">Projects Completed</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
@@ -57,11 +128,44 @@
         <div class="stat-divider"></div>
         <div class="stat-item">
             <span class="stat-icon">★</span>
-            <span class="stat-label">Quality Assurance</span>
+            <span class="stat-label">Quality Assured</span>
         </div>
-    </footer>
+    </div>
 
-    <!-- Projects Section -->
+    <!-- =====================================================
+         CATEGORIES / EXPERTISE
+         ===================================================== -->
+    <section id="categories" class="categories-section">
+        <div class="section-container">
+            <h2 class="section-title">Our Expertise</h2>
+            <p class="section-subtitle">From government-certified projects to luxurious interiors — we handle it all
+                with precision.</p>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🏛️</div>
+                    <h3>Government Certified</h3>
+                    <p>Approved contractor for MCGM, Western Railway & State projects. Compliant with all regulations.
+                    </p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏗️</div>
+                    <h3>Work Completion</h3>
+                    <p>Explore our extensive portfolio of completed structural, infrastructure and civil engineering
+                        work.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">✨</div>
+                    <h3>Interior Projects</h3>
+                    <p>Premium turnkey interior design and execution for commercial & residential spaces, end-to-end.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PROJECTS
+         ===================================================== -->
     <section id="projects" class="projects-section">
         <div class="section-container">
             <h2 class="section-title">Our Featured Projects</h2>
@@ -80,8 +184,7 @@
                     <div class="project-info">
                         <h3 class="project-title">Mahim Booking Office</h3>
                         <p class="project-desc">Construction of the new booking office at Mahim Platform No 1 for
-                            Western Railway, aimed at significantly improving passenger convenience and traffic flow.
-                        </p>
+                            Western Railway, improving passenger convenience.</p>
                         <span class="project-tag">Infrastructure</span>
                     </div>
                 </div>
@@ -96,7 +199,7 @@
                     <div class="project-info">
                         <h3 class="project-title">Mumbai Central Quarters</h3>
                         <p class="project-desc">Balance work for the construction of 54 units of Type II staff quarters
-                            at Mumbai Central, ensuring timely delivery bounds and quality compliance.</p>
+                            at Mumbai Central with quality compliance.</p>
                         <span class="project-tag">Residential</span>
                     </div>
                 </div>
@@ -110,8 +213,8 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Khatija Apartments, Bandra</h3>
-                        <p class="project-desc">Construction of a Ground + 7 floor residential building known as Khatija
-                            Apartments under the S.R.A Scheme in Bandra West, Mumbai.</p>
+                        <p class="project-desc">Construction of a G+7 residential building under the S.R.A Scheme in
+                            Bandra West, Mumbai.</p>
                         <span class="project-tag">Residential</span>
                     </div>
                 </div>
@@ -125,8 +228,8 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Chheda Arcade, Santacruz</h3>
-                        <p class="project-desc">Development of a premium commercial hub, Chheda Arcade, situated in
-                            Khira Nagar, Santacruz (West). Built with modern amenities.</p>
+                        <p class="project-desc">Premium commercial hub at Khira Nagar, Santacruz (West). Built with
+                            modern amenities and superior finishes.</p>
                         <span class="project-tag">Commercial</span>
                     </div>
                 </div>
@@ -141,7 +244,7 @@
                     <div class="project-info">
                         <h3 class="project-title">Wanka Mohalla Reconstruction</h3>
                         <p class="project-desc">Extensive reconstruction of Building 14-16 at Wanka Mohalla (C Ward),
-                            reinforcing structural integrity and modernizing the facade.</p>
+                            reinforcing structural integrity.</p>
                         <span class="project-tag">Reconstruction</span>
                     </div>
                 </div>
@@ -155,8 +258,8 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Powai Civilian Quarters</h3>
-                        <p class="project-desc">Construction of Type II Quarters at Powai for Civilians under M.E.S.
-                            Built to military engineering standards for longevity and comfort.</p>
+                        <p class="project-desc">Construction of Type II Quarters at Powai for civilians under M.E.S. —
+                            built to military engineering standards.</p>
                         <span class="project-tag">Military Eng.</span>
                     </div>
                 </div>
@@ -165,10 +268,83 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
     <footer class="site-footer">
-        <p>&copy; 2026 Indian Construction Co. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>INDIAN CONSTRUCTION CO</h3>
+                <p><strong>Address:</strong> B WING, GROUND FLOOR - 13, SARAF KASKAR INDUSTRIAL ESTATE.<br>S V ROAD,
+                    JOGESHWARI (W), MUMBAI 400 102</p>
+                <p><strong>Phone:</strong> +91 99674 77866</p>
+                <p><strong>Email:</strong> admin@indianconstructionco.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Indian Construction Co. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <!-- =====================================================
+         FLOATING SOCIAL BUTTONS
+         ===================================================== -->
+    <div class="floating-social">
+        <a href="https://wa.me/919967477866" target="_blank" class="float-btn float-whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+            </svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="float-btn float-instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+                <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+            </svg>
+        </a>
+        <a href="tel:09967477866" class="float-btn float-call" aria-label="Call">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+                <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- =====================================================
+         JAVASCRIPT - slide controller
+         ===================================================== -->
+    <script>
+        (function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            let current = 0;
+            let timer;
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() { goTo(current + 1); }
+
+            function start() { timer = setInterval(next, 5000); }
+            function pause() { clearInterval(timer); }
+
+            // Dot clicks
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    pause();
+                    goTo(parseInt(dot.dataset.slide));
+                    start();
+                });
+            });
+
+            start();
+        })();
+    </script>
 
 </body>
 
