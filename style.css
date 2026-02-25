@@ -1550,13 +1550,28 @@ body {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .site-nav {
+        height: 70px;
+        /* Slight height increase for 2-line logo */
+    }
+
+    .nav-logo {
+        font-size: 0.95rem;
+        /* Better scale for mobile */
+        letter-spacing: 0.5px;
+        white-space: normal;
+        /* Allow text to wrap */
+        line-height: 1.2;
+        max-width: 70%;
+    }
+
     .nav-hamburger {
         display: flex;
     }
 
     .nav-links {
         position: fixed;
-        top: 62px;
+        top: 70px;
         left: 0;
         right: 0;
         background: rgba(15, 15, 15, 0.97);
