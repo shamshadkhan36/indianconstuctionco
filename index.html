@@ -18,6 +18,27 @@
 <body>
 
     <!-- ======================================================
+         STICKY NAVIGATION BAR
+         ====================================================== -->
+    <header class="site-nav" id="siteNav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">INDIAN CONSTRUCTION CO</a>
+
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <button onclick="openCertModal()" class="nav-link nav-link--cert">🏅 Certificates</button>
+                <a href="tel:09967477866" class="nav-link nav-link--cta">📞 Call Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======================================================
          HERO - FULL SCREEN AUTO-ROTATING SLIDES
          ====================================================== -->
     <section class="hero-fullscreen" id="home">
@@ -49,14 +70,7 @@
         <div class="hero-top">
             <div class="brand-name">INDIAN CONSTRUCTION CO</div>
             <div class="brand-since">Mumbai's Trusted Contractor — Since 1970</div>
-            <div class="hero-services">
-                <span>Construction</span>
-                <span>Turnkey Interior</span>
-                <span>Architecture</span>
-                <span>Repair &amp; Maint.</span>
-                <span>Estimation</span>
-                <span>Designing</span>
-            </div>
+
         </div>
 
         <!-- ZONE 2: CENTER - CTA Buttons -->
@@ -483,13 +497,17 @@
     </section>
 
     <!-- =====================================================
-         CERTIFICATES & CREDENTIALS
+         CERTIFICATES MODAL
          ===================================================== -->
-    <section id="certificates" class="certificates-section">
-        <div class="section-container">
-            <h2 class="section-title">Certificates &amp; Credentials</h2>
-            <p class="section-subtitle">Recognized &amp; certified by leading government bodies — MHADA, MCGM, CIDCO,
-                ONGC, MES, MSRTC &amp; more.</p>
+    <div id="certModal" class="cert-modal" role="dialog" aria-modal="true" aria-label="Certificates">
+        <div class="cert-modal-inner">
+            <div class="cert-modal-header">
+                <div>
+                    <h2 class="cert-modal-title">Certificates &amp; Credentials</h2>
+                    <p class="cert-modal-sub">Certified by MHADA, MCGM, CIDCO, ONGC, MES, MSRTC &amp; more</p>
+                </div>
+                <button class="cert-modal-close" onclick="closeCertModal()" aria-label="Close">✕</button>
+            </div>
 
             <div class="cert-grid">
 
@@ -687,11 +705,11 @@
                 </div>
 
             </div><!-- /cert-grid -->
-        </div>
-    </section>
+        </div><!-- /cert-modal-inner -->
+    </div><!-- /certModal -->
 
     <!-- =====================================================
-         CERTIFICATE LIGHTBOX
+         CERTIFICATE LIGHTBOX (inside modal)
          ===================================================== -->
     <div id="certLightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
         <button class="cert-lb-close" id="certClose" aria-label="Close">✕</button>
@@ -784,8 +802,69 @@
         })();
     </script>
 
-    <!-- Certificate Lightbox JS -->
+    <!-- Navbar JS (Sticky Scroll & Mobile Hamburger) -->
     <script>
+        (function () {
+            const nav = document.getElementById('siteNav');
+            const hamburger = document.getElementById('navHamburger');
+            const navLinks = document.getElementById('navLinks');
+            const links = navLinks.querySelectorAll('.nav-link');
+
+            // Sticky scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile Hamburger toggle
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('open');
+                    navLinks.classList.toggle('open');
+                });
+
+                // Close menu when a link is clicked
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('open');
+                        navLinks.classList.remove('open');
+                    });
+                });
+            }
+        })();
+    </script>
+
+    <!-- Certificates Modal + Lightbox JS -->
+    <script>
+        // ---- Certificate Modal (triggered by nav button) ----
+        const certModal = document.getElementById('certModal');
+
+        function openCertModal() {
+            certModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            certModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking the dark backdrop
+        certModal.addEventListener('click', function (e) {
+            if (e.target === certModal) closeCertModal();
+        });
+
+        // Escape key closes modal (if lightbox is not open)
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && certModal.classList.contains('open')) {
+                closeCertModal();
+            }
+        });
+
+        // ---- Certificate Lightbox (click individual cert card) ----
         (function () {
             const cards = Array.from(document.querySelectorAll('.cert-card'));
             const lb = document.getElementById('certLightbox');
@@ -810,14 +889,9 @@
                 lbCap.textContent = label;
                 lbCnt.textContent = (current + 1) + ' / ' + cards.length;
                 lb.classList.add('open');
-                document.body.style.overflow = 'hidden';
             }
 
-            function closeLb() {
-                lb.classList.remove('open');
-                document.body.style.overflow = '';
-            }
-
+            function closeLb() { lb.classList.remove('open'); }
             function prevLb() { openLb((current - 1 + cards.length) % cards.length); }
             function nextLb() { openLb((current + 1) % cards.length); }
 
@@ -825,10 +899,7 @@
             btnClose.addEventListener('click', closeLb);
             btnPrev.addEventListener('click', prevLb);
             btnNext.addEventListener('click', nextLb);
-
-            lb.addEventListener('click', function (e) {
-                if (e.target === lb) closeLb();
-            });
+            lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
 
             document.addEventListener('keydown', function (e) {
                 if (!lb.classList.contains('open')) return;
