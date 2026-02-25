@@ -1055,9 +1055,11 @@ body {
 .about-services-list strong {
     display: block;
     color: var(--clr-text);
-    font-weight: 700;
-    font-size: 0.93rem;
-    margin-bottom: 0.1rem;
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Promise box */
