@@ -80,7 +80,7 @@ body {
 
 .hero-slide.active {
     opacity: 1;
-    animation: kenBurns 5s ease-out forwards;
+    animation: kenBurns 12s ease-out forwards;
 }
 
 @keyframes kenBurns {
@@ -194,17 +194,17 @@ body {
     letter-spacing: 1px;
 }
 
-/* ---- ZONE 2: CENTER (CTA Buttons) ---- */
+/* ---- ZONE 2: LEFT (CTA Buttons) ---- */
 .hero-center {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 5%;
+    transform: translateY(-50%);
     z-index: 10;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 /* ---- ZONE 3: BOTTOM LEFT (Slide Captions) ---- */
@@ -230,7 +230,7 @@ body {
     background: var(--grad-orange);
     color: #fff;
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     /* Increased size */
     font-weight: 700;
     text-transform: uppercase;
@@ -242,20 +242,21 @@ body {
 }
 
 .slide-heading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2.5vw, 2.1rem);
-    /* Decreased size */
-    font-weight: 900;
-    line-height: 1.2;
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+    font-weight: 400;
+    line-height: 1.3;
     color: #fff;
     margin-bottom: 0.6rem;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .slide-desc {
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
-    color: rgba(255, 255, 255, 0.82);
-    line-height: 1.65;
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
@@ -273,8 +274,8 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.85rem 2rem;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
@@ -738,7 +739,8 @@ body {
 .floating-social {
     position: fixed;
     right: 22px;
-    bottom: 35px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -935,8 +937,10 @@ body {
         flex-direction: column;
     }
 
-    /* Floating buttons: smaller, left side to avoid covering text */
+    /* Floating buttons: smaller, bottom right */
     .floating-social {
+        top: auto;
+        transform: none;
         right: 12px;
         bottom: 20px;
         gap: 10px;
@@ -1267,6 +1271,12 @@ body {
     border-radius: 2px;
     transition: transform 0.5s ease, opacity 0.4s ease;
     opacity: 0.93;
+    /* Blur to prevent copying/editing while remaining visible */
+    filter: blur(0.5px);
+    /* Prevent dragging/right-click */
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
     /* Slight inner border to simulate mat */
     box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
@@ -1366,6 +1376,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
     animation: lbFadeIn 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 @keyframes lbFadeIn {
@@ -1730,7 +1743,7 @@ body {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     overflow-y: auto;
-    padding: 2rem 1rem 3rem;
+    padding: 0 1rem 3rem;
 }
 
 .cert-modal.open {
@@ -1843,7 +1856,7 @@ body {
 
 @media (max-width: 768px) {
     .cert-modal {
-        padding: 1rem 0.5rem 2rem;
+        padding: 0 0.5rem 2rem;
     }
 
     .cert-modal-header {
