@@ -70,7 +70,7 @@ body {
 .hero-slide {
     position: absolute;
     inset: 0;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
@@ -80,7 +80,6 @@ body {
 
 .hero-slide.active {
     opacity: 1;
-    animation: kenBurns 12s ease-out forwards;
 }
 
 @keyframes kenBurns {
@@ -811,6 +810,15 @@ body {
 
 .float-call:hover {
     box-shadow: 0 10px 30px rgba(0, 168, 150, 0.5);
+}
+
+.float-projects {
+    background: linear-gradient(135deg, #FF6B35, #FF8C00);
+    color: #fff;
+}
+
+.float-projects:hover {
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
 }
 
 /* =====================================================
@@ -1601,7 +1609,6 @@ body {
 
 .nav-link--cert:hover {
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.45), rgba(255, 107, 53, 0.45));
-    border-color: rgba(212, 175, 55, 0.8);
 }
 
 /* Call Now CTA */
