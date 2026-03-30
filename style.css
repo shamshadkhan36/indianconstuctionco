@@ -80,6 +80,7 @@ body {
 
 .hero-slide.active {
     opacity: 1;
+    animation: kenBurns 12s linear forwards;
 }
 
 @keyframes kenBurns {
@@ -367,66 +368,7 @@ body {
     }
 }
 
-/* =====================================================
-   STATS STRIP
-   ===================================================== */
-.stats-strip {
-    background: var(--clr-white);
-    box-shadow: var(--shadow-md);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0;
-    padding: 2.2rem 5%;
-    border-top: 4px solid;
-    border-image: var(--grad-vibrant) 1;
-    position: relative;
-    z-index: 10;
-}
 
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1.5rem;
-}
-
-.stat-number {
-    font-family: var(--font-heading);
-    font-size: 2.6rem;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 0.3rem;
-    background: var(--grad-orange);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stat-icon {
-    font-size: 2.2rem;
-    margin-bottom: 0.3rem;
-    background: var(--grad-gold);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stat-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--clr-text-soft);
-}
-
-.stat-divider {
-    width: 1px;
-    height: 55px;
-    background: var(--clr-border);
-}
 
 /* =====================================================
    SHARED SECTION STYLES
