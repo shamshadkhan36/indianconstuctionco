@@ -248,8 +248,7 @@
                         <p>"This is more than a company. It's a <strong>50+ year promise</strong> kept across
                             generations."</p>
                         <a href="tel:09967477866" class="btn btn-primary">📞 Let's Build Together</a>
-                        <p class="about-sig">— Proprietor, Arctech Interior LLP<br><em>Mumbai · Since 1970 · Still
-                                building with the same heart.</em></p>
+
                     </div>
                 </div>
             </div>
@@ -456,96 +455,31 @@
          ===================================================== -->
     <section id="ongoing-projects" class="projects-section" style="background-color: var(--light-bg); padding-top: 0;">
         <div class="section-container">
-            <h2 class="section-title">Ongoing Project</h2>
-            <p class="section-subtitle" style="max-width: 800px; margin: 0 auto 3rem auto;">Ongoing Project, Sikar
-                Rajasthan (RCC BUILDING BASEMENT + 4 floor)</p>
+            <h2 class="section-title">Ongoing Projects</h2>
+            <p class="section-subtitle" style="max-width: 800px; margin: 0 auto 2.5rem auto;">
+                Explore our current works spanning construction, architecture, building maintenance, and project estimation.
+            </p>
 
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/ongoing1.png"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/ongoing2.png"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/ongoing3.png"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.22.38%20(1).jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.22.38%20(2).jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.22.38.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.46.35.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.46.36.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.46.37.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.46.38.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.46.39.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="ongoingproject/WhatsApp%20Image%202026-02-22%20at%2021.46.40.jpeg"
-                            alt="Ongoing Project Sikar" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
+            <!-- Category Filter Tabs -->
+            <div class="ongoing-tabs">
+                <button class="ongoing-tab-btn active" data-category="all">All Projects</button>
+                <button class="ongoing-tab-btn" data-category="construction">Construction</button>
+                <button class="ongoing-tab-btn" data-category="architecture">Architecture</button>
+                <button class="ongoing-tab-btn" data-category="maintenance">Home &amp; Maintenance</button>
+                <button class="ongoing-tab-btn" data-category="estimation">Estimation &amp; Costing</button>
             </div>
+
+            <!-- Project Grid -->
+            <div id="ongoing-project-grid" class="project-grid">
+                <!-- Dynamically populated by Javascript -->
+            </div>
+
+            <!-- Load More Controls -->
+            <div class="load-more-container" id="loadMoreContainer" style="text-align: center; margin-top: 2.5rem; display: none;">
+                <button class="btn btn-outline" id="btnLoadMore">Load More Works</button>
+            </div>
+
+
         </div>
     </section>
 
@@ -628,6 +562,20 @@
     </div>
 
     <!-- =====================================================
+         ONGOING PROJECTS LIGHTBOX
+         ===================================================== -->
+    <div id="projectLightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer">
+        <button class="cert-lb-close" id="projClose" aria-label="Close">✕</button>
+        <button class="cert-lb-nav cert-lb-prev" id="projPrev" aria-label="Previous">&#8249;</button>
+        <button class="cert-lb-nav cert-lb-next" id="projNext" aria-label="Next">&#8250;</button>
+        <div class="cert-lb-content">
+            <img id="projLbImg" src="" alt="">
+            <p id="projLbCaption" class="cert-lb-caption"></p>
+        </div>
+        <div id="projLbCounter" class="cert-lb-counter"></div>
+    </div>
+
+    <!-- =====================================================
          FOOTER
          ===================================================== -->
     <footer class="site-footer">
@@ -646,9 +594,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Arctech Interior LLP. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -820,6 +765,165 @@
                 if (e.key === 'ArrowLeft') prevLb();
                 if (e.key === 'ArrowRight') nextLb();
             });
+        })();
+    </script>
+
+    <!-- Include dynamically segregated projects list -->
+    <script src="ongoing_projects_data.js"></script>
+
+    <!-- Ongoing Projects Navigation, Filtering & Lightbox Controller -->
+    <script>
+        (function() {
+            // Check if ongoingProjectsData is loaded
+            if (typeof ongoingProjectsData === 'undefined') {
+                console.error('ongoingProjectsData is not defined. Make sure ongoing_projects_data.js is loaded.');
+                return;
+            }
+
+            const grid = document.getElementById('ongoing-project-grid');
+            const loadMoreContainer = document.getElementById('loadMoreContainer');
+            const btnLoadMore = document.getElementById('btnLoadMore');
+            const tabs = document.querySelectorAll('.ongoing-tab-btn');
+            
+            // Lightbox Elements
+            const lb = document.getElementById('projectLightbox');
+            const lbImg = document.getElementById('projLbImg');
+            const lbCap = document.getElementById('projLbCaption');
+            const lbCnt = document.getElementById('projLbCounter');
+            const btnClose = document.getElementById('projClose');
+            const btnPrev = document.getElementById('projPrev');
+            const btnNext = document.getElementById('projNext');
+            
+            let activeCategory = 'all';
+            let displayedCount = 12;
+            const itemsPerPage = 12;
+            let filteredProjects = [];
+            let currentLightboxIndex = 0;
+
+            // 1. Render Grid
+            function renderProjects(resetCount = false) {
+                if (resetCount) {
+                    displayedCount = itemsPerPage;
+                }
+                
+                // Filter by category
+                if (activeCategory === 'all') {
+                    filteredProjects = ongoingProjectsData;
+                } else {
+                    filteredProjects = ongoingProjectsData.filter(p => p.category === activeCategory);
+                }
+
+                // Slice data for pagination
+                const visibleProjects = filteredProjects.slice(0, displayedCount);
+                
+                // Clear grid
+                grid.innerHTML = '';
+
+                if (visibleProjects.length === 0) {
+                    grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--clr-text-soft); padding: 3rem 0;">No projects in this category.</p>`;
+                    loadMoreContainer.style.display = 'none';
+                    return;
+                }
+
+                // Render visible project cards
+                visibleProjects.forEach((proj, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card fade-in';
+                    card.innerHTML = `
+                        <div class="project-image-wrapper" style="cursor: pointer;">
+                            <img src="${proj.img}" alt="${proj.title}" loading="lazy">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">${proj.title}</h3>
+                            <p class="project-desc">${proj.desc}</p>
+                            <span class="project-tag" style="text-transform: uppercase;">${proj.category}</span>
+                        </div>
+                    `;
+                    
+                    // Lightbox trigger on click
+                    card.querySelector('.project-image-wrapper').addEventListener('click', () => {
+                        openLightbox(index);
+                    });
+                    
+                    grid.appendChild(card);
+                });
+
+                // Manage Load More button
+                if (displayedCount < filteredProjects.length) {
+                    loadMoreContainer.style.display = 'block';
+                } else {
+                    loadMoreContainer.style.display = 'none';
+                }
+            }
+
+            // 2. Setup Category Tabs Click Event
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    activeCategory = tab.dataset.category;
+
+                    renderProjects(true);
+                });
+            });
+
+            // 3. Load More Button Click
+            btnLoadMore.addEventListener('click', () => {
+                displayedCount += itemsPerPage;
+                renderProjects(false);
+            });
+
+            // 4. Lightbox Controls
+            function openLightbox(index) {
+                currentLightboxIndex = index;
+                const proj = filteredProjects[currentLightboxIndex];
+                
+                lbImg.style.animation = 'none';
+                void lbImg.offsetHeight; // Trigger reflow
+                lbImg.style.animation = '';
+                
+                lbImg.src = proj.img;
+                lbImg.alt = proj.title;
+                lbCap.innerHTML = `<strong>${proj.title}</strong><br>${proj.desc}`;
+                lbCnt.textContent = `${currentLightboxIndex + 1} / ${filteredProjects.length}`;
+                
+                lb.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close lightbox
+            function closeLightbox() {
+                lb.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function prevProject() {
+                if (filteredProjects.length === 0) return;
+                currentLightboxIndex = (currentLightboxIndex - 1 + filteredProjects.length) % filteredProjects.length;
+                openLightbox(currentLightboxIndex);
+            }
+
+            function nextProject() {
+                if (filteredProjects.length === 0) return;
+                currentLightboxIndex = (currentLightboxIndex + 1) % filteredProjects.length;
+                openLightbox(currentLightboxIndex);
+            }
+
+            btnClose.addEventListener('click', closeLightbox);
+            btnPrev.addEventListener('click', prevProject);
+            btnNext.addEventListener('click', nextProject);
+            lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+            document.addEventListener('keydown', e => {
+                if (!lb.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevProject();
+                if (e.key === 'ArrowRight') nextProject();
+            });
+
+            // Initialize Grid
+            renderProjects(true);
         })();
     </script>
 

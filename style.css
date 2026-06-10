@@ -1684,7 +1684,11 @@ body {
     }
 
     .nav-link--cnc {
-        padding: 0.4rem 0.45rem;
+        padding: 0.55rem 0.85rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.5px;
+        transform: scale(1.08);
+        transform-origin: center;
     }
 
     .nav-link--cta {
@@ -1922,3 +1926,97 @@ body {
 .short-card:hover .short-overlay {
     transform: translateY(0);
 }
+
+/* =====================================================
+   ONGOING PROJECTS: TABS & FILTERING
+   ===================================================== */
+.ongoing-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: -1rem auto 3.5rem auto;
+    max-width: 1000px;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 100px;
+    box-shadow: var(--shadow-sm);
+}
+
+.ongoing-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--clr-text-soft);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.65rem 1.6rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.ongoing-tab-btn:hover {
+    color: var(--clr-text);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.ongoing-tab-btn.active {
+    background: var(--grad-orange);
+    color: #fff;
+    box-shadow: var(--glow-orange);
+}
+
+/* For mobile devices, adjust the tab bar */
+@media (max-width: 768px) {
+    .ongoing-tabs {
+        border-radius: 20px;
+        margin-bottom: 2.5rem;
+        gap: 0.5rem;
+    }
+    .ongoing-tab-btn {
+        font-size: 0.78rem;
+        padding: 0.5rem 1rem;
+        flex: 1 1 calc(50% - 0.5rem);
+        text-align: center;
+    }
+}
+
+/* Project grid transitions */
+.project-card.fade-in {
+    animation: projReveal 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes projReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.project-card.hidden {
+    display: none !important;
+}
+
+/* Lightbox Image mirror */
+#projLbImg {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    animation: lbFadeIn 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
